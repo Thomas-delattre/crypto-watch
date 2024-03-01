@@ -166,7 +166,9 @@ const Table = ({ coinsData }) => {
                   b.price_change_percentage_1y_in_currency
                 );
               case "ATHreverse":
-                return a.ath_change_percentage - b.ath_change_percentage;
+                return (
+                  a.ath_change_percentage - b.ath_change_percentage
+                  );
               default:
                 null;
             }
