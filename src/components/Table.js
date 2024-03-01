@@ -61,24 +61,24 @@ const Table = ({coinsData}) => {
         {coinsData && coinsData
         .slice(0, rangeNumber)
         .filter((coin) => {
-            if(showStable){
+            if (showStable) {
+              return coin;
+            } else {
+              if (isStableCoin(coin.symbol)) {
                 return coin;
-            }else{
-                if(isStableCoin(coin.symbol)){
-                    return coin;
-                }
+              }
             }
-        })
-        .filter((coin) =>{
-            if(showFavList){
-                let list = window.localStorage.coinList.split(',');
-                if(list.includes(coin.id)){
-                    return coin;
-                }
-            }else{
+          })
+          .filter((coin) => {
+            if (showFavList) {
+              let list = window.localStorage.coinList.split(",");
+              if (list.includes(coin.id)) {
                 return coin;
+              }
+            } else {
+              return coin;
             }
-        })
+          })
         .sort((a,b) => {
           switch (orderBy){
             case "Prix":
@@ -120,8 +120,9 @@ const Table = ({coinsData}) => {
             case "1areverse":
                 return a.price_change_percentage_1y_in_currency - b.price_change_percentage_1y_in_currency;
             case "ATHreverse":
-                return a.ath_change_percentage - b.ath_change_percentage;            
-            }  
+                return a.ath_change_percentage - b.ath_change_percentage;      
+                default: null;      
+            } 
         }) 
         .map((coin, index) => <TableLine coin={coin} index={index} key={index}/>
             
