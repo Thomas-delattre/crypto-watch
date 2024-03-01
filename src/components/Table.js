@@ -120,8 +120,7 @@ const Table = ({coinsData}) => {
             case "1areverse":
                 return a.price_change_percentage_1y_in_currency - b.price_change_percentage_1y_in_currency;
             case "ATHreverse":
-                return a.ath_change_percentage - b.ath_change_percentage;      
-                default: null;      
+                return a.ath_change_percentage - b.ath_change_percentage;          
             } 
         }) 
         .map((coin, index) => <TableLine coin={coin} index={index} key={index}/>
