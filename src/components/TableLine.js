@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CoinChart from "./CoinChart";
 import PercentChange from "./PercentChange";
-import StarIcon from "./StarIcon";
+import StarIcon from "./Staricon";
 
 const TableLine = ({ coin, index }) => {
   const [showChart, setShowChart] = useState(false);
