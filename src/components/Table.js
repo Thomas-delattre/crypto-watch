@@ -68,7 +68,7 @@ const Table = ({ coinsData }) => {
       {coinsData &&
         coinsData
           .slice(0, rangeNumber)
-          .map((coin) => {
+          .filter((coin) => {
             if (showStable) {
               return coin;
             } else {
@@ -77,7 +77,7 @@ const Table = ({ coinsData }) => {
               }
             }
           })
-          .map((coin) => {
+          .filter((coin) => {
             if (showFavList) {
               let list = window.localStorage.coinList.split(",");
               if (list.includes(coin.id)) {
@@ -169,7 +169,10 @@ const Table = ({ coinsData }) => {
                 return (
                   a.ath_change_percentage - b.ath_change_percentage
                   );
+                /* eslint-disable */
                   default:
+                    null;
+               /* eslint-enable  */ 
                 }
               })
           .map((coin, index) => (
