@@ -90,11 +90,11 @@ const Table = ({ coinsData }) => {
           .sort((a, b) => {
             switch (orderBy) {
               case "Prix":
-                return b.current_price - a.current_price;
+                return (b.current_price - a.current_price);
               case "Volume":
-                return b.total_volume - a.total_volume;
+                return (b.total_volume - a.total_volume);
               case "MarketCap":
-                return b.market_cap - a.market_cap;
+                return (b.market_cap - a.market_cap);
               case "1h":
                 return (
                   b.price_change_percentage_1h_in_currency -
@@ -126,15 +126,15 @@ const Table = ({ coinsData }) => {
                   a.price_change_percentage_1y_in_currency
                 );
               case "ATH":
-                return b.ath_change_percentage - a.ath_change_percentage;
+                return (b.ath_change_percentage - a.ath_change_percentage);
               case "#reverse":
-                return a.market_cap - b.market_cap;
+                return (a.market_cap - b.market_cap);
               case "Prixreverse":
-                return a.current_price - b.current_price;
+                return (a.current_price - b.current_price);
               case "Volumereverse":
-                return a.total_volume - b.total_volume;
+                return (a.total_volume - b.total_volume);
               case "MarketCapreverse":
-                return a.market_cap - b.market_cap;
+                return (a.market_cap - b.market_cap);
               case "1hreverse":
                 return (
                   a.price_change_percentage_1h_in_currency -
@@ -169,10 +169,10 @@ const Table = ({ coinsData }) => {
                 return (
                   a.ath_change_percentage - b.ath_change_percentage
                   );
-              default:
-                null;
-            }
-          })
+                  default:
+                    null;
+                }
+              })
           .map((coin, index) => (
             <TableLine coin={coin} key={coin.id} index={index} />
           ))}
