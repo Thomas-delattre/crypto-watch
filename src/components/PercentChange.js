@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import colors from "../styles/_settings.scss";
 
 const PercentChange = ({ percent }) => {
   const [color, setColor] = useState();
 
-  useEffect(() => {
+  useState(() => {
     if (percent) {
       if (percent >= 0) {
         setColor(colors.green1);
