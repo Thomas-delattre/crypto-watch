@@ -19,7 +19,7 @@ const Table = ({ coinsData }) => {
     "1s",
     "1m",
     "6m",
-    "1y",
+    "1a",
     "ATH",
   ];
 
@@ -164,12 +164,13 @@ const Table = ({ coinsData }) => {
                 return (
                   a.price_change_percentage_1y_in_currency -
                   b.price_change_percentage_1y_in_currency
-                );
+                  );
               case "ATHreverse":
                 return (
                   a.ath_change_percentage - b.ath_change_percentage
                   );
                   default:
+                    
                 }
               })
           .map((coin, index) => (
