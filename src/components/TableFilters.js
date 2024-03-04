@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setListDisplay } from "../action/list.action";
 import { setStableState } from "../action/stable.action";
@@ -8,7 +8,7 @@ const TableFilters = () => {
   const [showFavList, setShowFavList] = useState(false);
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useState(() => {
     dispatch(setStableState(showStable));
     dispatch(setListDisplay(showFavList));
   }, [showStable, showFavList]);
