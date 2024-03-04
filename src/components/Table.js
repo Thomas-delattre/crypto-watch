@@ -169,8 +169,8 @@ const Table = ({ coinsData }) => {
                 return (
                   a.ath_change_percentage - b.ath_change_percentage
                   );
-                  default:
-                    null;
+                  // default:
+                  //   null;
                 }
               })
           .map((coin, index) => (
